@@ -11,5 +11,12 @@ RSpec.describe SetsController, type: :controller do
       expect(assigns(:output)).to match_array(['1','2','3','4'])
     end
   end
+  
+  describe 'intersection action' do
+    it "produces the intersection" do
+      post :view, params: {commit: 'intersection', seta: [1,2,3], setb: [2,3,4]}
+      expect(assigns(:output)).to match_array(['2','3'])
+    end
+  end
 
 end
