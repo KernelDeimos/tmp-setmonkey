@@ -1,0 +1,12 @@
+<%= form_with url: "sets/temp" do |form| %>
+	<input type="text" name="seta[]" /><br>
+	<input type="text" name="seta[]" /><br>
+	<input type="text" name="seta[]" /><br>
+
+	<input type="text" name="setb[]" /><br>
+	<input type="text" name="setb[]" /><br>
+	<input type="text" name="setb[]" /><br>
+
+	<%= form.submit value: "union" %>
+<% end %>
+

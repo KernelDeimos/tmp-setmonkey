@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'sets/definition'
+  post 'sets/temp'
+  post 'sets/view'
+  root 'sets#definition'
 end
