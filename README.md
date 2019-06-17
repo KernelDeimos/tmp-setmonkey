@@ -3,9 +3,9 @@
 ## Environment Details
 
 This project has been tested under the following environment:
-**operating system:** `Ubuntu 18.04.1 LTS`
-**ruby version:** `ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-gnu]`
-**rails version:** `Rails 5.2.3`
+- **operating system:** `Ubuntu 18.04.1 LTS`
+- **ruby version:** `ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-gnu]`
+- **rails version:** `Rails 5.2.3`
 
 ## Usage
 1. Install dependancies from Gemfile
