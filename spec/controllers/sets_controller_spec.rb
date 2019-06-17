@@ -35,6 +35,12 @@ RSpec.describe SetsController, type: :controller do
       post :view, params: {commit: 'subset', seta: [1,2,3,4], setb: [2,3]}
       expect(assigns(:output)).to match_array(['false'])
     end
+    it "is correct when A is identical" do
+      # NB: Exercise uses "subset-or-equal-to" symbol, so assuming
+      #     "true" is the correct output for this case.
+      post :view, params: {commit: 'subset', seta: [1,2,3,4], setb: [1,2,3,4]}
+      expect(assigns(:output)).to match_array(['true'])
+    end
   end
 
 end
