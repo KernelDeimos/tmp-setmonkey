@@ -10,6 +10,8 @@ class SetsController < ApplicationController
       union
     when "intersection"
      intersection
+    when "difference"
+      difference
     end
     render :view
   end
@@ -33,7 +35,7 @@ class SetsController < ApplicationController
     # Initialize empty set for result
     setIntersection = Hash.new
 
-    # Convert user input (lists) to sets
+    # Collect user input lists
     lisa = params[:seta]
     lisb = params[:setb]
 
@@ -43,7 +45,7 @@ class SetsController < ApplicationController
       hasha[k] = true
     end
 
-    # Iterate over set B, adding any key not found
+    # Iterate over set B, adding any key found
     # in hash A to the final result
     lisb.each do |k|
       if hasha.key?(k)
@@ -54,6 +56,38 @@ class SetsController < ApplicationController
     @output = setIntersection.keys
   end
   def difference
+    # Initialize empty set for result
+    setDifference = Hash.new
+
+    # Initialize empty set for union
+    setIntersection = Hash.new
+
+    # Collect user input lists
+    lisa = params[:seta]
+    lisb = params[:setb]
+
+    # Add set A items to intermediate hashmap
+    hasha = Hash.new
+    lisa.each do |k|
+      hasha[k] = true
+    end
+
+    # Iterate over set B, adding any key found
+    # in hash A to the final result
+    lisb.each do |k|
+      if hasha.key?(k)
+        setIntersection[k] = true
+      end
+    end
+
+    # Add set items which aren't in intersection to difference
+    (lisa + lisb).each do |k|
+      if not setIntersection.key?(k)
+        setDifference[k] = true
+      end
+    end
+
+    @output = setDifference.keys
   end
   def subset
   end
@@ -64,4 +98,5 @@ class SetsController < ApplicationController
     puts YAML::dump params[:setb]
     render plain: params[:seta].inspect
   end
+
 end

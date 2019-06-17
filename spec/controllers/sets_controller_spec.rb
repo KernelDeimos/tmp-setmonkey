@@ -19,4 +19,11 @@ RSpec.describe SetsController, type: :controller do
     end
   end
 
+  describe 'difference action' do
+    it "produces the difference" do
+      post :view, params: {commit: 'difference', seta: [1,2,3], setb: [2,3,4]}
+      expect(assigns(:output)).to match_array(['1','4'])
+    end
+  end
+
 end
