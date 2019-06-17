@@ -5,6 +5,7 @@ class SetsController < ApplicationController
   def definition
   end
   def view
+    # Choose correct behaviour based on which button was pressed
     case params[:commit]
     when "union"
       union
