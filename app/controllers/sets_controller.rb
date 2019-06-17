@@ -12,6 +12,8 @@ class SetsController < ApplicationController
      intersection
     when "difference"
       difference
+    when "subset"
+      subset
     end
     render :view
   end
@@ -90,6 +92,27 @@ class SetsController < ApplicationController
     @output = setDifference.keys
   end
   def subset
+    # Collect user input lists
+    lisa = params[:seta]
+    lisb = params[:setb]
+
+    # Add set B items to intermediate hashmap
+    hashb = Hash.new
+    lisb.each do |k|
+      hashb[k] = true
+    end
+
+    # Optimism: assume A is a subset
+    aIsSubsetOfB = true
+    lisb.each do |k|
+      if not hashb.key?(k)
+        aIsSubsetOfB = false
+        break
+      end
+    end
+
+    @output = aIsSubsetOfB ? ["true"] : ["false"]
+
   end
 
   # Route to dump results for manual testing

@@ -26,4 +26,15 @@ RSpec.describe SetsController, type: :controller do
     end
   end
 
+  describe 'subset action' do
+    it "is correct when A is subset" do
+      post :view, params: {commit: 'subset', seta: [2,3], setb: [1,2,3,4]}
+      expect(assigns(:output)).to match_array(['true'])
+    end
+    it "is correct when A is a superset" do
+      post :view, params: {commit: 'subset', seta: [1,2,3,4], setb: [2,3]}
+      expect(assigns(:output)).to match_array(['true'])
+    end
+  end
+
 end
