@@ -15,7 +15,6 @@ class SetsController < ApplicationController
     when "subset"
       subset
     end
-    render :view
   end
   def union
     # Initialize empty set

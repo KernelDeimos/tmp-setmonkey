@@ -1,12 +1,25 @@
-<%= form_with url: "sets/temp", local: true do |form| %>
+<%= form_with url: "sets/view", local: true do |form| %>
+<div class="set-entry left">
+	<div class="header">Set A</div>
 	<input type="text" name="seta[]" /><br>
 	<input type="text" name="seta[]" /><br>
 	<input type="text" name="seta[]" /><br>
+	<input type="text" name="seta[]" /><br>
+</div>
 
+<div class="set-entry right">
+	<div class="header">Set B</div>
 	<input type="text" name="setb[]" /><br>
 	<input type="text" name="setb[]" /><br>
 	<input type="text" name="setb[]" /><br>
+	<input type="text" name="setb[]" /><br>
+</div>
 
+<div class="submit-buttons">
 	<%= form.submit value: "union" %>
+	<%= form.submit value: "difference" %>
+	<%= form.submit value: "intersection" %>
+	<%= form.submit value: "subset" %>
+</div>
 <% end %>
 

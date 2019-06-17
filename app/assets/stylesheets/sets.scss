@@ -1,3 +1,14 @@
 // Place all the styles related to the Sets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'application.scss';
+
+.set-entry {
+	.header {
+		font-family: Quicksand, Arial, Helvetica, sans-serif;
+		font-size: 20pt;
+	}
+	display: inline-block;
+	width: calc(50% - 2px);
+}

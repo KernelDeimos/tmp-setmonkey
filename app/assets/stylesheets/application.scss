@@ -1,0 +1,33 @@
+$color-cm1: rgb(226, 48, 82);
+$color-cm2: rgb(254, 215, 49);
+
+BODY {
+	padding: 0;
+	margin: 0;
+}
+
+.app-header {
+	background-color: $color-cm1;
+	width: 100%;
+	height: 60pt;
+	padding: 0 15pt;
+	line-height: 60pt;
+	font-size: 40pt;
+	color: white;
+	font-family: Quicksand, Arial, Helvetica, sans-serif;
+
+}
+
+.app-inside {
+	padding: 0 15px;
+	padding-top: 15px;
+}
+
+.submit-buttons {
+	padding-top: 20pt;
+	.input, .button {
+		display: inline-block;
+		background-color: $color-cm2;
+	}
+}
+
