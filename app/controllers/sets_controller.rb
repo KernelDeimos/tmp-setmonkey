@@ -103,7 +103,7 @@ class SetsController < ApplicationController
 
     # Optimism: assume A is a subset
     aIsSubsetOfB = true
-    lisb.each do |k|
+    lisa.each do |k|
       if not hashb.key?(k)
         aIsSubsetOfB = false
         break
